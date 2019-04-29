@@ -1,0 +1,63 @@
+EXO1
+
+atomic name: student,school
+role: hasStudentId
+Individual: Pierre,Paris-Saclay
+
+
+
+
+Student ⊓ ∃ isStudying.{Paris-Saclay}
+“All students who are studying in Paris-Saclay
+
+¬hasDiploma(Thomas,Master)
+“Thomas doesn’t have diploma of Master”
+
+∃ hasDiploma. \bot (Thomas)
+“Thomas doesn’t have diploma”
+
+Student ⊓ ≥4 hasStudyYear.StudyYear ⊓ (∃isStudying. ComputerScience)
+“The student who has at least 4 years of study in CS”
+
+hasGraduate(Chen,)
+"Chen has from "
+
+
+TBox 
+DKStudent = Student ⊓ ∃hasCourse.DKCourse
+MandatoryCourse = Course ⊓ ∃hasProperty.necessary
+OptionalCourse = Course ⊓ ∃hasProperty.optional
+StudentValidate = Student ⊓ ∃hasRound.validation
+Internship advisor= Person ⊓ ∃supervise.student
+
+CSEnginieering = Student ⊓ ≥4 hasStudyYear.StudyYear ⊓ (∃isStudying. ComputerScience)
+
+ABox
+Student(John)
+HasCourse(John,Semantic Web)
+StudyIn(John,Telecom-ParisTech)
+Classmate(John,Tom)
+Hasdiploma(John,Master)
+CSEnginieering(Tom)
+
+StudyYear(firstyear)
+StudyYear(secondyear)
+StudyYear(thirdyear)
+StudyYear(fourthyear)
+
+
+
+DKStudent(John):
+T = {DKStudent = Student ⊓ ∃hasCourse.DKCourse}
+A = {HasCourse(John, Semantic Web),Student(John),DKCourse(Semantic Web)}
+
+
+
+EXO2
+131148009 = 404684003 ⊓ ∃116676008.50960005
+
+
+A subclassof B
+A subclassof \neg B
+
+A = owl:nothing
